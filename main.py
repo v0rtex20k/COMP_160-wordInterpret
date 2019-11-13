@@ -15,7 +15,7 @@ from interpret import wordInterpret
 
 
 def main():
-	inputNums = "04164106885502258532"
+	inputNums = "1234"
 	result = wordInterpret(inputNums)
 	print(result)
 

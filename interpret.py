@@ -8,6 +8,12 @@
 #    includes function students need to implement
 #
 ##########################################################################
+
+#for i in range(len(inputNums)):
+		#	if int(inputNums[i]) == 1 or int(inputNums[i]) == 2:
+		#		group(inputNums, i)
+		#print("--------------------------------")
+
 import math
 
 memo = {}
@@ -22,18 +28,24 @@ def memoizer(func):
 # function returns an int
 @memoizer
 def wordInterpret(inputNums):
-	if '0' in inputNums:
-		return 0
 	if len(inputNums) <= 1:
 		return 1
-	if int(inputNums[0]) == 1 or int(inputNums[0]) == 2: 					# good number
+	if int(inputNums[0]) == 1:
 		return wordInterpret(inputNums[1:]) + wordInterpret(inputNums[2:])
-	else:
-		return wordInterpret(inputNums[1:])									# bad number
+	elif int(inputNums[0]) == 2:
+		if int(inputNums[1]) < 7:
+			return wordInterpret(inputNums[1:]) + wordInterpret(inputNums[2:])
+	return wordInterpret(inputNums[1:])
 
+def group(word, i):
+	for x in range(len(word)-1):
+		print(word[x], end="")
+		if x != i:
+			print("-", end="")
+	print(word[len(word)-1])
 
 def main():
-	inputNums = "04164106885502258532"
+	inputNums = "15275217996613369643"
 	result = wordInterpret(inputNums)
 	print(result)
 	print(memo)
@@ -41,3 +53,4 @@ def main():
 
 if __name__ == '__main__':
 	main()
+
