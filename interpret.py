@@ -21,6 +21,8 @@ def memoizer(func):
 
 # inputNums is a string
 # function returns an int
+
+# O(n) time complexity since we only scan through the input once
 @memoizer
 def wordInterpret(inputNums):
 	if len(inputNums) == 1: 	# if there is only one number (0-9) left, it must map to a letter
