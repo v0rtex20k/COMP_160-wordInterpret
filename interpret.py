@@ -34,23 +34,23 @@ def memoizer(func):
 #			 \
 #
 #  - Justification: We traverse through our input in pairs. If the current number
-#    				and it's right neighbor form a pair that is outside our range
-#					(aka >= 27), we know that those numbers can never be grouped 
-#					together, and should not be counted. We therefore must treat 
-#					the current number as an individual (inputNums[1:]) and try 
-#					our luck with the next pair.
-#					Conversely, if the pair is INSIDE our range (aka < 27), it
-#					is a valid pairing, and we consider that pair as individual
-#					numbers (inputNums[1:]) and as a pair (inputNums[2:]) using
-#					recursion. 
-#					Zeros are special, since they can never be the "units digit"
-#					of a pair UNLESS the "tens digit" is 1 or 2. Furthermore, 
-#					they can never be a "tens digit" and they can never be an
-#					individual, under any circumstances. As we recurse, if we 
-#					find a 0 "tens digit", we do NOT consider it, and return
-#					0 immediately. If the zero is the units digit of a 1 or 2,
-#					however, it is captured in our case <27, since 10 and 20
-#					are less than 27.
+#    		    and it's right neighbor form a pair that is outside our range
+#		    (aka >= 27), we know that those numbers can never be grouped 
+#		    together, and should not be counted. We therefore must treat 
+#		    the current number as an individual (inputNums[1:]) and try 
+#		    our luck with the next pair.
+#		    Conversely, if the pair is INSIDE our range (aka < 27), it
+#		    is a valid pairing, and we consider that pair as individual
+#		    numbers (inputNums[1:]) and as a pair (inputNums[2:]) using
+#		    recursion. 
+#		    Zeros are special, since they can never be the "units digit"
+#		    of a pair UNLESS the "tens digit" is 1 or 2. Furthermore, 
+#	            they can never be a "tens digit" and they can never be an
+#		    individual, under any circumstances. As we recurse, if we 
+#		    find a 0 "tens digit", we do NOT consider it, and return
+#		    0 immediately. If the zero is the units digit of a 1 or 2,
+#		    however, it is captured in our case <27, since 10 and 20
+#		    are less than 27.
 #					
 #					
 @memoizer
