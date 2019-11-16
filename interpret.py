@@ -23,12 +23,12 @@ def memoizer(func):
 #
 # 	- O(n) time complexity since we only scan through the input once.
 #
-#            / 
+#            		/ 
 #			|   0 if inputNums[n] is 0 
 #			|
 #			|   1 if end of input
-#	- T(n) =|
-#  		    |   T(n-1) if inputNums[n] is 1 or 2
+#	- T(n) =	|
+#  		        |   T(n-1) if inputNums[n] is 1 or 2
 #			|
 #			|   T(n-1) + T(n-2) otherwise
 #			 \
